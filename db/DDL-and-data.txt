@@ -1,0 +1,226 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 21, 2016 at 04:07 AM
+-- Server version: 5.7.9
+-- PHP Version: 5.6.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `window_cleaning`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `shipping_address` varchar(50) DEFAULT NULL,
+  `email_address` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`ID`, `user_name`, `first_name`, `last_name`, `shipping_address`, `email_address`, `password`, `type`) VALUES
+(1, 'patrick', 'Patrick', 'Neal', '3700 willington street ', 'neal.patrick@me', '123', 'admin'),
+(2, 'york', 'Feng', 'Liu', '5566 mcgregor street ', 'xfyorkliu@sina.com', '321', 'admin'),
+(3, 'linder', 'Matthew', 'Linder', '1234 saba street', 'xfyorkliu@sina.com', 'swerv', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `state` varchar(30) NOT NULL,
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `total` decimal(15,2) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`ID`, `state`, `time`, `total`) VALUES
+(1, 'cancelled', '2016-03-07 22:28:18', '0.00'),
+(2, 'cancelled', '2016-03-07 22:28:18', '0.00'),
+(3, 'checked out', '2016-03-28 19:21:19', '0.00'),
+(4, 'cancelled', '2016-03-28 19:57:53', '0.00'),
+(5, 'checked out', '2016-03-28 19:59:59', '0.00'),
+(6, 'cancelled', '2016-03-28 20:00:02', '0.00'),
+(7, 'checked out', '2016-03-28 20:06:27', '0.00'),
+(8, 'checked out', '2016-03-28 20:13:57', '0.00'),
+(9, 'checked out', '2016-03-28 20:14:32', '0.00'),
+(10, 'checked out', '2016-03-28 21:54:11', '0.00'),
+(11, 'checked out', '2016-03-29 03:30:58', '0.00'),
+(12, 'checked out', '2016-04-04 03:22:54', '0.00'),
+(13, 'checked out', '2016-04-05 23:06:27', '0.00'),
+(14, 'checked out', '2016-04-05 23:08:40', '0.00'),
+(15, 'checked out', '2016-04-05 23:39:41', '0.00'),
+(16, 'checked out', '2016-04-05 23:45:27', '0.00'),
+(17, 'checked out', '2016-04-06 00:01:30', '0.00'),
+(18, 'checked out', '2016-04-06 00:03:57', '0.00'),
+(19, 'checked out', '2016-04-06 01:34:32', '0.00'),
+(20, 'checked out', '2016-04-07 06:32:45', '0.00'),
+(21, 'checked out', '2016-04-07 19:39:53', '0.00'),
+(22, 'checked out', '2016-04-07 19:40:38', '0.00'),
+(23, 'checked out', '2016-04-07 19:41:45', '0.00'),
+(24, 'checked out', '2016-04-07 19:45:50', '0.00'),
+(25, 'checked out', '2016-04-07 19:46:38', '0.00'),
+(26, 'checked out', '2016-04-07 19:57:05', '0.00'),
+(27, 'checked out', '2016-04-07 20:23:19', '0.00'),
+(28, 'checked out', '2016-04-07 20:32:46', '0.00'),
+(29, 'checked out', '2016-04-07 20:37:00', '0.00'),
+(30, 'checked out', '2016-04-07 20:40:28', '0.00'),
+(31, 'checked out', '2016-04-07 21:10:14', '0.00'),
+(32, 'checked out', '2016-04-07 21:13:55', '0.00'),
+(33, 'checked out', '2016-04-07 23:08:21', '0.00'),
+(34, 'started', '2016-04-07 23:09:33', '0.00'),
+(35, 'checked out', '2016-04-07 23:49:13', '0.00'),
+(36, 'checked out', '2016-04-08 04:04:29', '0.00'),
+(37, 'checked out', '2016-04-08 04:35:59', '0.00'),
+(38, 'cancelled', '2016-04-08 06:01:06', '0.00'),
+(39, 'cancelled', '2016-04-08 06:01:25', '0.00'),
+(40, 'cancelled', '2016-04-08 06:04:14', '0.00'),
+(41, 'cancelled', '2016-04-08 07:24:03', '0.00'),
+(42, 'cancelled', '2016-04-08 07:39:40', '0.00'),
+(43, 'cancelled', '2016-04-08 07:40:16', '0.00'),
+(44, 'checked out', '2016-04-08 18:09:10', '0.00'),
+(45, 'checked out', '2016-04-08 18:32:31', '0.00'),
+(46, 'checked out', '2016-04-08 18:33:21', '0.00'),
+(47, 'checked out', '2016-04-08 19:06:43', '0.00'),
+(48, 'checked out', '2016-04-08 19:15:05', '0.00'),
+(49, 'checked out', '2016-04-08 19:18:23', '0.00'),
+(50, 'checked out', '2016-04-08 19:46:19', '0.00'),
+(51, 'checked out', '2016-04-08 19:57:52', '0.00'),
+(52, 'checked out', '2016-04-08 20:00:09', '0.00'),
+(53, 'checked out', '2016-04-08 20:13:31', '0.00'),
+(54, 'cancelled', '2016-04-08 23:48:52', '0.00'),
+(55, 'cancelled', '2016-04-09 00:00:01', '0.00'),
+(56, 'checked out', '2016-04-09 00:34:41', '0.00'),
+(57, 'checked out', '2016-04-09 20:16:56', '0.00'),
+(58, 'checked out', '2016-04-09 20:18:55', '0.00'),
+(59, 'cancelled', '2016-04-11 17:26:50', '0.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart_product`
+--
+
+DROP TABLE IF EXISTS `cart_product`;
+CREATE TABLE IF NOT EXISTS `cart_product` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `cart_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  KEY `product_id` (`product_id`),
+  KEY `cart_id` (`cart_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart_product`
+--
+
+INSERT INTO `cart_product` (`ID`, `product_id`, `cart_id`, `quantity`, `time`) VALUES
+(1, 1, 3, 2, '2016-03-28 19:21:29'),
+(29, 1, 33, 1, '2016-04-07 23:08:33'),
+(30, 1, 33, 1, '2016-04-07 23:08:33'),
+(31, 1, 33, 1, '2016-04-07 23:08:33'),
+(32, 2, 33, 1, '2016-04-07 23:08:33'),
+(33, 3, 33, 1, '2016-04-07 23:08:33'),
+(34, 1, 35, 1, '2016-04-07 23:49:17'),
+(35, 2, 35, 1, '2016-04-07 23:49:17'),
+(36, 1, 53, 1, '2016-04-08 20:13:45'),
+(37, 2, 53, 1, '2016-04-08 20:13:45'),
+(38, 3, 53, 1, '2016-04-08 20:13:45'),
+(39, 1, 56, 3, '2016-04-09 03:07:47'),
+(40, 2, 56, 1, '2016-04-09 03:07:47'),
+(41, 1, 57, 1, '2016-04-09 20:17:19'),
+(42, 1, 58, 1, '2016-04-09 20:19:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_info`
+--
+
+DROP TABLE IF EXISTS `customer_info`;
+CREATE TABLE IF NOT EXISTS `customer_info` (
+  `customer_email` varchar(50) NOT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `province` varchar(50) DEFAULT NULL,
+  `postal_code` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`customer_email`),
+  KEY `product_id` (`first_name`),
+  KEY `cart_id` (`last_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_info`
+--
+
+INSERT INTO `customer_info` (`customer_email`, `first_name`, `last_name`, `address`, `city`, `province`, `postal_code`) VALUES
+('pat@hotmail.com', 'pat', 'neal', '2319 Home St', 'Vancouver', 'BC', 'V7J3N5'),
+('fsd', 'df', 'dfs', 'sdf', 'fds', 'fds', 'dfs'),
+('sd', 'sad', 'sda', 'sda', 'sad', 'sda', 'sad'),
+('a', 'as', 'sa', 's', 'as', 'saa', 's'),
+('sad', 'sad', 'D', 'D', 'D', 'F', 'D'),
+('sa', 'sda', 'sda', 'as', 'asd', 'sad', 'sad'),
+('asd', 'sad', 'sad', 'das', 'dfs', 'dasf', 'df'),
+('pat', 'is', 'da', 'best', 'person', 'ever', 'yay'),
+('sac', 'ds', 'dfas', 'dsf', 'dfa', 'daf', 'dsa'),
+('esdf', 'adsf', 'fghjfhjg', 'fjfjhg', 'fhgfjhgj', 'fhgfj', 'hfhgj');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service`
+--
+
+DROP TABLE IF EXISTS `service`;
+CREATE TABLE IF NOT EXISTS `service` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) DEFAULT NULL,
+  `service_name` varchar(50) DEFAULT NULL,
+  `short_description` varchar(50) DEFAULT NULL,
+  `long_description` varchar(500) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `price` int(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`ID`, `user_name`, `service_name`, `short_description`, `long_description`, `password`, `type`, `price`) VALUES
+(2, '1', 'Basic Outdoor Window Cleaning', 'Our entry level window cleaning service.', 'With  this Basic Outdoor Window Cleaning service you will receive our entry level cleaning service for the exterior side of your household windows. We use high grade, biodegradable chemicals that do not harm the environment. We will spray, wipe clean and squegee the windows and guarantee a streak free view!', '123', 'admin', 10),
+(3, '2', 'Mid-Level Outdoor Window Cleaning', 'Our mid-level window cleaning service.', 'With  this Mid-level Outdoor Window Cleaning service you will receive our mid-level cleaning service for the exterior side of your household windows.  What differentiates our mid level cleaning service from our Basic outdoor window cleaning service is that we do a multi stage cleaning process which results in a crystal clear finish. We use high grade, biodegradable chemicals that do not harm the environment. We will spray, wipe clean and squegee the windows and guarantee a streak free view!', '123', 'admin', 5),
+(8, '3', 'Premium Outdoor Window Cleaning', 'Our premium level window cleaning service.', 'With our Premium outdoor window cleaning service. This service contains the same features as our lower tier cleaning service plus we clean window sills, trim and apply special coating which lengthens the longevity of the cleanliness.', NULL, 'admin', 20);
