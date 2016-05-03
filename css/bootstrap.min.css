@@ -15,10 +15,11 @@ body {
 	width:40%;
 	padding: 20px;
 	color: black;
-	padding: 20px;
 }
 .btn-footer {
 	color: black;
+	width: 40%;
+	padding: 10px;
 }
 .footerholder {
     bottom: 0;
@@ -32,4 +33,21 @@ body {
 .footer {
     display: table-cell; 
     vertical-align: bottom;
+}
+.btn-question1 {
+	color:black;
+	width:100%;
+	padding:10px;
+	border:1;
+}
+.label1 {
+	background-color:gray;
+	padding:20px;
+	padding-top:30px;
+}
+.title1 {
+	height:50px;
+}
+.btn1 {
+	color:black;
 }
