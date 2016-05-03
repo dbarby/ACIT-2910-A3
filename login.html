@@ -21,6 +21,7 @@
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
     </style>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,7 +49,15 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!--Database call to get products here-->
+        <div class="row">
+            <form method="get" action="index.html">
+            <label>Login Here</label><br>
+                <input type="text" name="name" class="btn1" placeholder="username"><br>
+                <input type="password" name="pw" class="btn1" placeholder="password"><br>
+                <button type="submit" class="btn1">Login</button>
+            </form>
+        </div>
+        <!-- /.row -->
 
     </div>
     <!-- /.container -->
@@ -60,13 +69,6 @@
     <script src="js/bootstrap.min.js"></script>
 
 </body>
-<footer>
-    <div class="footerholder">
-        <div class="footer">
-        <a href="index2.html"><button type="submit" class="btn-footer"><</button></a>
-            <a href="#"><button class="btn-footer">></button></a>
-        </div>
-    </div>
-</footer>
+
 
 </html>
