@@ -14,7 +14,9 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+/*    padding-bottom: 400px;*/
+    
 }
 
 article,
@@ -8043,6 +8045,7 @@ button.close {
 body {
     background-image: url("bgrd.png");
     color: white;
+    padding-bottom: 15%;
 }
 
 .row {
@@ -8073,22 +8076,25 @@ body {
 
 .btn-footer {
     color: black;
-    width: 40%;
+    width: 49%;
     padding: 10px;
 }
 
 .footerholder {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 100%;
     display: table;
     text-align: center;
+    
+    
 }
 
 .footer {
     display: table-cell;
     vertical-align: bottom;
+    
 }
 
 .btn-question1 {
@@ -8113,13 +8119,11 @@ body {
     background-color: white;
     color: black;
     padding:8px;
-    display: none;
+/*    display: none;*/
         
     
 }
-#description-A1{
-/*    display: none;*/
-}
+
 
 .title1 {
     height: 50px;
