@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +35,8 @@
 
 <body>
 
+<?php include 'connect.php'; ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -53,7 +56,7 @@
         <div class="survey-container">
             <form>
                 <div class="label1">
-                    <label>Question 3</label>
+                    <label>question 3</label>
                 </div>
                 <div class="row-container">
                     <button class="btn-question3">A1</button>
