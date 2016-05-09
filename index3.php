@@ -1,26 +1,35 @@
 
-<?php include 'header.php';?>
+<?php include 'header.php';
 
+$sql = 'SELECT question FROM question';
+$q = $conn->query($sql);
+$row = $q->fetchObject();
+
+$ans = 'SELECT * FROM answer'; 
+$statement = $conn->prepare($ans);
+$statement->execute();
+$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+$count = 1;
+?>
     <!-- Page Content -->
     <div class="container">
 
         <div class="survey-container">
             <form>
                 <div class="label1">
-                    <label>question 3</label>
+                    <label><?php echo $row->question; ?></label>
                 </div>
                 <div class="row-container">
-                    <button class="btn-question3">A1</button>
-                    <button class="btn-description3" id="btn-A1">Desc</button>
-                    <div class="answer-description" id="description-A1">
-                        <p>Description 1</p>
-                    </div>
-                    <button class="btn-question3">A2</button>
-                    <button class="btn-description3" id="btn-A2">Desc</button>
-                    <div class="answer-description" id="description-A2">
-                        <p>Description 2</p>
-                    </div>
-                    <button class="btn-question3">A3</button>
+                    <?php foreach ($rows as $row1) {
+                    echo "<button class='btn-question3'>" . $row1['answer'] . "</button>
+                    <button class='btn-description3' id='btn-A" . $count . "'>Desc</button>
+                    <div class='answer-description' id='description-A" . $count . "'>
+                        <p>" . $row1['description'] . "</p>
+                    </div>";
+                    $count++;
+                    } ?>
+
+                    <!-- <button class="btn-question3">A3</button>
                     <button class="btn-description3" id="btn-A3">Desc</button>
                     <div class="answer-description" id="description-A3">
                         <p>Description 3</p>
@@ -29,7 +38,7 @@
                     <button class="btn-description3" id="btn-A4">Desc</button>
                     <div class="answer-description" id="description-A4">
                         <p>Description 4</p>
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </div>
