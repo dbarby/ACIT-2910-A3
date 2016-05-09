@@ -1,3 +1,4 @@
+<?php include 'connect.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,37 +39,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="start.html">Atrois</a>
+                <a class="navbar-brand" href="#">Atrois</a>
+                <a href="login.php">Admin</a>
+                <a class="navbar-brand" href="start.php">Atrois</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-            <form method="get" action="index.html">
-            <label>Login Here</label><br>
-                <input type="text" name="name" class="btn1" placeholder="username"><br>
-                <input type="password" name="pw" class="btn1" placeholder="password"><br>
-                <button type="submit" class="btn1">Login</button>
-            </form>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-
-</html>

@@ -1,3 +1,6 @@
+<<<<<<< HEAD:index3.php
+<?php include 'header.php';?>
+=======
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +52,7 @@
         </div>
         <!-- /.container -->
     </nav>
+>>>>>>> refs/remotes/origin/Database-integration:index3.php
 
     <!-- Page Content -->
     <div class="container">
@@ -101,7 +105,6 @@
             /*$('#btn-A1').click(function() {
                 $('#description-A1').slideToggle("fast");
             });*/
-
             $("#btn-A1").click(function(e) {
                 e.preventDefault();
                 $("#description-A1").toggle({
@@ -130,23 +133,18 @@
                     easing: "linear"
                 });
             });
-
-
-
-
         });
-
     </script>
 
 </body>
 <footer>
     <div class="footerholder">
         <div class="footer">
-            <a href="index2.html">
+            <a href="index2.php">
                 <button type="submit" class="btn-footer">
                     <</button>
             </a>
-            <a href="price.html">
+            <a href="results.php.">
                 <button class="btn-footer">></button>
             </a>
         </div>
