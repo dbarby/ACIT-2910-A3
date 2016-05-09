@@ -1,3 +1,4 @@
+<?php include 'connect.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,7 @@
     <!-- Custom CSS -->
     <style>
     body {
-        padding-top: 50px;
+        padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
     </style>
@@ -38,48 +39,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="start.html">Atrois</a>
+                <a class="navbar-brand" href="#">Atrois</a>
+                <a href="login.php">Admin</a>
+                <a class="navbar-brand" href="start.php">Atrois</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-            <form>
-            <div class="label1"><label>Question 2</label></div>
-            <button class="btn-question1">A1</button>
-            <button class="btn-question1">A2</button>
-            <button class="btn-question1">A3</button>
-            <button class="btn-question1">A4</button>
-            <button class="btn-question1">A5</button>
-            <button class="btn-question1">A6</button>
-            </form>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-<footer>
-    <div class="footerholder">
-        <div class="footer">
-            <a href="index.html"><button type="submit" class="btn-footer"><</button></a>
-            <a href="index3.html"><button class="btn-footer">></button></a>
-        </div>
-    </div>
-</footer>
-
-
-</html>

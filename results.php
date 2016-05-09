@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Find your perfect Laptop</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <style>
-        body {
-            padding-top: 50px;
-            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
-
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="start.html">Atrois</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+<?php include 'header.php';?>
 
     <!-- Page Content -->
     <div class="container">
@@ -213,12 +166,10 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
             $('#batt-life-content, #screen-size-content,#more-content').hide();
             /*$('#btn-A1').click(function() {
                 $('#description-A1').slideToggle("fast");
             });*/
-
             $("#batt-life-btn").click(function(e) {
                 e.preventDefault();
                 $("#batt-life-content").toggle({
@@ -226,7 +177,6 @@
                     easing: "linear"
                 });
             });
-
             $("#screen-size-btn").click(function(e) {
                 e.preventDefault();
                 $("#screen-size-content").toggle({
@@ -234,7 +184,6 @@
                     easing: "linear"
                 });
             });
-
             $("#more-btn").click(function(e) {
                 e.preventDefault();
                 $("#more-content").toggle({
@@ -242,12 +191,8 @@
                     easing: "linear"
                 });
             });
-
             
-
-
         });
-
     </script>
 
 </body>
