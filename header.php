@@ -1,3 +1,4 @@
+<?php include 'connect.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,7 @@
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
     </style>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,36 +39,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="start.html">Atrois</a>
+                <a class="navbar-brand" href="#">Atrois</a>
+                <a href="login.php">Admin</a>
+                <a class="navbar-brand" href="start.php">Atrois</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <!--Database call to get products here-->
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-<footer>
-    <div class="footerholder">
-        <div class="footer">
-        <a href="index2.html"><button type="submit" class="btn-footer"><</button></a>
-            <a href="#"><button class="btn-footer">></button></a>
-        </div>
-    </div>
-</footer>
-
-</html>
