@@ -1,10 +1,5 @@
-<<<<<<< HEAD
+
 <?php include 'header.php' ?>
-
-
-=======
-<?php include 'header.php';
->>>>>>> Results-page
     <!-- Page Content -->
     <div class="container">
 
@@ -23,9 +18,6 @@
 
     </div>
     <!-- /.container -->
-<<<<<<< HEAD
-<?php include 'footer.php';?>
-=======
 
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
@@ -45,4 +37,4 @@
 
 
 </html>
->>>>>>> Results-page
+
