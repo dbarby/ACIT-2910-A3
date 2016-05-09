@@ -168,5 +168,5 @@ class DBConnector {
     }
 
 }
-
+echo "daniel";
 ?>

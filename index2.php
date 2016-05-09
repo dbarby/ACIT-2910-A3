@@ -5,8 +5,9 @@ $q = $conn->query($sql);
 $row = $q->fetchObject();
 
 $ans = 'SELECT answer FROM answer'; 
-$a = $conn->query($ans);
-$b = $conn->fetchAll(PDO::FETCH_ASSOC);
+$statement = $conn->prepare($ans);
+$statement->execute();
+$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
     <!-- Page Content -->
@@ -15,13 +16,10 @@ $b = $conn->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <form>
             <div class="label1"><label><?php echo $row->question; ?></label></div>
-            <p><?php echo $b[1] ?></p>
-            <button class="btn-question1">A1</button>
-            <button class="btn-question1">A2</button>
-            <button class="btn-question1">A3</button>
-            <button class="btn-question1">A4</button>
-            <button class="btn-question1">A5</button>
-            <button class="btn-question1">A6</button>
+            <?php foreach ($rows as $row1) {
+                echo "<button class='btn-question1'>" . $row1['answer'] . "</button>";
+            }
+            ?>
             </form>
         </div>
         <!-- /.row -->
