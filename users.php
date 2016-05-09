@@ -81,15 +81,38 @@ loadScripts();
                 $user_name = $row['user_name'];
                 $shipping_address = $row['shipping_address'];
                 $email_address = $row['email_address'];
-                $html .= "<tr>
-                  <td class='first_name'><span>$first_name</span></td>
-                  <td class='last_name'><span>$last_name</span></td>
-                  <td class='user_name'><span>$user_name</span></td>
-                  <td class='shipping_address'><span>$shipping_address</span></td>
-                  <td class='email_address'><span>$email_address</span></td>
-                  <td><input id='d-$user_name' class='delete' type='button' value='Delete'/></td>
-                  <td><input id='u-$user_name' class='update' type='button' value='Update'/></td>
-                  </tr>";
+                $html .= "
+                <tr>
+                <th id='admin-header'>$first_name $last_name</th>
+                </tr>
+                <tr>
+                <th class='first_name_header'><span>First Name:</span>
+                <td class='first_name'><span>$first_name</span></td></th>
+                </tr>
+                <tr>
+                <th class='last_name_header'><span>Last Name:</span></th>
+                <td class='last_name'><span>$last_name</span></td>
+                </tr>
+                <tr>
+                <th class='login_header'><span>User Name:</span></th>
+                <td class='user_name'><span>$user_name</span></td>
+                </tr>
+                <tr>
+                <th class='login_header'><span>Shipping Address:</span></th>
+                <td class='shipping_address'><span>$shipping_address</span></td>                
+                </tr>
+                <tr>
+                 <th class='login_header'><span>Email Address:</span></th>
+                <td class='email_address'><span>$email_address</span></td>              
+                </tr>
+                <tr>
+                 <th class='delete_header'><span>Update Info:</span></th>
+                <td><input id='u-$user_name' class='update' type='button' value='Update'/></td>               
+                </tr>
+                <tr>
+                <th class='delete_header'><span>Delete User:</span></th>
+                 <td><input id='d-$user_name' class='delete' type='button' value='Delete'/></td>               
+                </tr>";
             }
             echo $html;
 
