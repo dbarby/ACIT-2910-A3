@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+table {
+    background-color:floralwhite;
+    border: solid 1px;
+}
+
+td {
+    border-bottom: solid 1px;
+    padding: 4px;
+}
+#admin-header{
+   border-bottom: solid 3px;
+    border-bottom-style:double;
+    border-top: solid 1px;
+    border-right: solid 1px;
+   
+}
+
+
+/*
+
+@media screen and (max-width:300px)
+{
+    table{
+        background-color: blue;
+    }
+}
+*/
+
+@media screen and (max-width: 480px) {
+    table{
+        width: 100%;
+    }
+   
+}
+
+
+
