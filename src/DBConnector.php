@@ -54,6 +54,7 @@ class DBConnector {
 
         } catch(PDOException $e) {
             //echo $e->getMessage();
+            
             Messages::addMessage("error", "DBConnector contructor: " . $e->getMessage());
         }
 
