@@ -1,7 +1,7 @@
 
 <?php include 'header.php';
 
-$sql = 'SELECT question FROM question WHERE q_id = 1';
+$sql = 'SELECT question FROM question WHERE q_id = 3';
 $q = $conn->query($sql);
 $row = $q->fetchObject();
 
@@ -20,9 +20,9 @@ $count = 1;
                     <label><?php echo $row->question; ?></label>
                 </div>
                 <div class="row-container">
-
                     <?php 
                     foreach ($rows as $row1 => $row11) {
+                        if ($row1 < 8) continue;
                     echo "<button class='btn-question3'>" . $row11['answer'] . "</button>
                     <button class='btn-description3' id='btn-A" . $count . "'>Desc</button>
                     <div class='answer-description' id='description-A" . $count . "'>
@@ -33,7 +33,6 @@ $count = 1;
                         break;
                     }
                     } ?>
-                    
 
                     <!-- <button class="btn-question3">A3</button>
                     <button class="btn-description3" id="btn-A3">Desc</button>
@@ -102,11 +101,11 @@ $count = 1;
 <footer>
     <div class="footerholder">
         <div class="footer">
-            <a href="index.php">
+            <a href="index4.php">
                 <button type="submit" class="btn-footer">
                     <</button>
             </a>
-            <a href="index4.php.">
+            <a href="results.php.">
                 <button class="btn-footer">></button>
             </a>
         </div>
