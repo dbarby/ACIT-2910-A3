@@ -1,22 +1,20 @@
+<?php include 'header.php';?>
 
-<?php include 'header.php' ?>
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
-            <form>
-            <div><label>Question 1</label></div>
-            <button class="btn-question">A1</button>
-            <button class="btn-question">A2</button><br>
-            <button class="btn-question">A3</button>
-            <button class="btn-question">A4</button><br>
-            <button class="btn-question">A5</button>
-            <button class="btn-question">A6</button>
-            </form>
+        <div class="row title1">
+            <br><br>
+            <label>Find your perfect laptop now! Click below to begin your search</label>
+            <br><br><br><br><br><br>
+            <a href="index3.php">
+                <button type="submit" class="btn-question">Begin</button>
+            </a>
         </div>
         <!-- /.row -->
 
     </div>
+	
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.1 -->
@@ -29,12 +27,12 @@
 <footer>
     <div class="footerholder">
         <div class="footer">
-        <a href="start.html"><button type="submit" class="btn-footer"><</button></a>
-            <a href="index2.html"><button class="btn-footer">></button></a>
+            <a href="login.php">
+            <button type="submit" class="btn-footer">Login</button>
+            </a>        
         </div>
     </div>
 </footer>
-
 
 </html>
 

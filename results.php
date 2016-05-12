@@ -1,4 +1,11 @@
-<?php include 'header.php';?>
+<?php include 'header.php';
+
+$res = 'SELECT * FROM product'; 
+$statement = $conn->prepare($res);
+$statement->execute();
+$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+$count = 1;
+?>
 
     <!-- Page Content -->
     <div class="container">
@@ -11,57 +18,29 @@
                 <div class="row-container">
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
                         there is one in focus and two below it.-->
-                    <div class="zoom-result">
+                    <?php 
+                    foreach ($rows as $row) {
+                    echo '<div class="zoom-result">
                         <div class="zoom-rank">
-                            <p id="rank-1">#1</p>
+                            <p id="rank-' . $count . '">#' . $count . '</p>
                         </div>
                         <div class="zoom-image">
-                            <img id="rank-1-img" alt="1st laptop img" src="img/asus-laptop-thumbnail.jpg">
+                            <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
                         </div>
                         <div class="zoom-description">
-                            <p id="brand">Asus ZenBook UX303UB</p>
+                            <p id="brand">' . $row["p_name"] . '</p>
                             <ul>
-                                <li>Intel Core i7</li>
-                                <li>8Gb RAM</li>
-                                <li>2.2lbs</li>
+                                <li>' . $row["cpu"] . '</li>
+                                <li>' . $row["battery"] . ' Hours Battery</li>
+                                <li>' . $row["graphics"] . '</li>
                             </ul>
                         </div>
-                    </div>
+                    </div>';
+                    $count++;
+                }
+                    ?>
 
-                    <div class="zoom-result">
-                        <div class="zoom-rank">
-                            <p id="rank-2">#2</p>
-                        </div>
-                        <div class="zoom-image">
-                            <img id="rank-2-img" alt="2nd laptop img" src="img/asus-laptop-thumbnail.jpg">
-                        </div>
-                        <div class="zoom-description">
-                            <p id="brand">Asus ZenBook UX303UB</p>
-                            <ul>
-                                <li>Intel Core i7</li>
-                                <li>8Gb RAM</li>
-                                <li>2.2lbs</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="zoom-result">
-                        <div class="zoom-rank">
-                            <p id="rank-3">#3</p>
-                        </div>
-                        <div class="zoom-image">
-
-                            <img id="rank-3-img" alt="3rd laptop img" src="img/asus-laptop-thumbnail.jpg">
-                        </div>
-                        <div class="zoom-description">
-                            <p id="brand">Asus ZenBook UX303UB</p>
-                            <ul>
-                                <li>Intel Core i7</li>
-                                <li>8Gb RAM</li>
-                                <li>2.2lbs</li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div id="compare-header">
                         <label>Comparisons</label>
                     </div>
@@ -76,12 +55,16 @@
                                     <td><b>Rated hours</b></td>
 
                                 </tr>
-                                <tr>
-                                    <td><b>1</b></td>
-                                    <td>Asus</td>
-                                    <td>9 hours</td>
-                                </tr>
-                                <tr>
+                                <?php $bat = 1;
+                                foreach ($rows as $row) {
+                                    echo "<tr>
+                                    <td><b>" . $bat . "</b></td>
+                                    <td>" . $row['p_name'] . "</td>
+                                    <td>" . $row['battery'] . " hours</td>
+                                </tr>";
+                                $bat++;
+                                }?>
+                                <!-- <tr>
                                     <td><b>2</b></td>
                                     <td>Lenovo</td>
                                     <td>7 hours</td>
@@ -90,7 +73,7 @@
                                     <td><b>3</b></td>
                                     <td>HP</td>
                                     <td>6 hours</td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </div>
                     </div>
@@ -105,13 +88,17 @@
                                     <td><b>Resolution</b></td>
 
                                 </tr>
-                                <tr>
-                                    <td><b>1</b></td>
-                                    <td>Asus</td>
-                                    <td>15.6"</td>
-                                    <td>1920x1080</td>
-                                </tr>
-                                <tr>
+                                <?php $scn = 1;
+                                foreach ($rows as $row) {
+                                    echo "<tr>
+                                    <td><b>" . $scn . "</b></td>
+                                    <td>" . $row['p_name'] . "</td>
+                                    <td>" . $row['screen_size'] . "''</td>
+                                    <td>" . $row['res_width'] . "x" . $row['res_height'] . "</td>
+                                </tr>";
+                                $scn++;
+                                }?>
+                                <!-- <tr>
                                     <td><b>2</b></td>
                                     <td>Lenovo</td>
                                     <td>14.1"</td>
@@ -122,7 +109,7 @@
                                     <td>HP</td>
                                     <td>17"</td>
                                     <td>1600x900</td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </div>
 
@@ -199,12 +186,9 @@
 <footer>
     <div class="footerholder">
         <div class="footer">
-            <a href="index2.html">
+            <a href="index5.php">
                 <button type="submit" class="btn-footer">
                     <</button>
-            </a>
-            <a href="price.html">
-                <button class="btn-footer">></button>
             </a>
         </div>
     </div>
