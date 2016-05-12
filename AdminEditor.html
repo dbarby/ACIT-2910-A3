@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Editor</title>
+    <meta charset="utf-8"/>
+    <link href="css/AdminEditorCSS/AdminEditor.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div id="content">
+         <h2>Admin Editor</h2>
+      <p><i>Here you can edit Admin Account information.</i></p>
+      <table id="users">
+        <thead>
+<!--
+          <tr id="colums_header">
+            <th class="first_name_header"><span>First Name</span></th>
+            <th class="last_name_header"><span>Last Name</span></th>
+            <th class="login_header"><span>User Name</span></th>
+            
+            <th class="login_header"><span>Shipping Address</span></th>
+            <th class="login_header"><span>Email Address</span></th>
+              
+            <th class="delete_header"><span>Delete</span></th>
+            <th class="delete_header"><span>Update</span></th>
+          </tr>
+-->
+        </thead>
+
+        <tbody id='userrows'>
+          <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+          <tr>
+            <td class="first_name"><span>aaa</span></td>
+            <td class="last_name"><span>bbb</span></td>
+            <td class="user_name"><span>uniqueloginname</span></td>
+            <td class="shipping_address"><span>3700 willinton street</span></td>
+            <td class="email_address"><span>xfyorkliu@live.cn</span></td>  
+              
+            <td><input id="uniqueloginname" class="delete" type="button" value="Delete"/></td>
+          </tr>
+          <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+        </tbody>
+      </table>​
+      <form id="addNewUser">
+        <input id="addFirstName" type="text" placeholder="first name" required="required"/>
+        <input id="addLastName" type="text" placeholder="last name" required="required"/>
+        <input id="addUserName" type="text" placeholder="User name" required="required"/>
+          
+        <input id="addShippingAddress" type="text" placeholder="Shipping Address" required="required"/>
+        <input id="addEmailAddress" type="text" placeholder="Email Address" required="required"/>
+          
+          
+        <input id="submitNewUser" type="submit" value="Add"/>
+      </form>
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/AdminEditorJS/AdminEditor.js">
+    </script>
+
+  </body>
+</html>
