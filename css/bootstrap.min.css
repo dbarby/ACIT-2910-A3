@@ -8062,7 +8062,12 @@ body {
 .row-container {
     /*    margin-right: 20%;*/
     /*    margin-left: -15px;*/
+    background-color: azure;
 }
+.zoom-result-container{
+/*    background-color: blue;*/
+}
+
 
 .btn-description3 {
     float: right;
@@ -8133,6 +8138,8 @@ body {
     background-color: gray;
     text-align: center;
     height: 40px;
+    width: 200%;
+    
 }
 
 .zoom-rank {
@@ -8144,12 +8151,11 @@ body {
     font-size: 15pt;
     font-weight:600;
 }
-.zoom-description #brand{
-    font-weight: 600;
-}
+
 
 .zoom-result {
-    height:100px;
+    min-height:100px;   
+
 }
 
 .zoom-image {
@@ -8157,7 +8163,7 @@ body {
     float: left;
     background-color: azure;
     color: black;
-    height: 100%;
+    
 }
 
 .compare-category-header button {
@@ -8179,7 +8185,9 @@ body {
 }
 
 .zoom-description #brand {
+     font-weight: 600;
     font-size: 11pt;
+    padding-bottom: 0px;
 }
 
 .compare-content {
@@ -8214,3 +8222,8 @@ body {
 .btn1 {
     color: black;
 }
+.maxlist-more{
+    font-size:8pt;     
+    
+}
+
