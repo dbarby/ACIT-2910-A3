@@ -12,7 +12,7 @@ $count = 1;
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a href="login.php">Admin</a>
-                <a class="navbar-brand" href="start.php">LaptopFinder2016</a>
+                <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              
             <!-- Collect the nav links, forms, and other content for toggling -->
