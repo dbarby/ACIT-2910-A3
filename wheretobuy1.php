@@ -13,43 +13,10 @@ $count = 1;
         <div class="results-container">
             <form>
                 <div id="results-header">
-                    <label>Your Results!</label>
+                    <label>Where to buy</label>
                 </div>
                 <div class="row-container">
-                    <!--Zoom-result just means that it is in focus. More applicable to the design where
-                        there is one in focus and two below it.-->
-                    <div class="zoom-result-container">
-                        <?php 
-                    foreach ($rows as $row) {
-                    echo '
-                    
-                    <div class="zoom-result">
-                        <div class="zoom-rank" >
-                            <p id="rank-' . $count . '">#' . $count . '</p>
-                        </div>
-                        <div class="zoom-image">
-                            <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-                            <a href="wheretobuy'.$count.'.php">Where to buy</a>
-                        </div>
-                        <div class="zoom-description" id="zoom-description-'.$count.'">
-                            <p id="brand">' . $row["p_name"] . '</p>
-                            <ul class="item-'.$count.'">
-                                <li>' . $row["cpu"] . '</li>
-                                <li>' . $row["battery"] . ' Hours Battery</li>
-                                <li>' . $row["graphics"] . '</li>
-                            </ul>
-                        </div>
-                    </div>';
-                    $count++;
-                }
-                    ?>
 
-                    </div>
-                    <!--
-                    <div id="compare-header">
-                        <label>Comparisons</label>
-                    </div>
--->
                     <label id="compare-header">Comparisons</label>
                     <div class="compare-category-header">
                         <button id="batt-life-btn">Battery Life</button>
@@ -214,7 +181,7 @@ $count = 1;
     <footer>
         <div class="footerholder">
             <div class="footer">
-                <a href="index5.php">
+                <a href="results.php">
                     <button type="submit" class="btn-footer">
                         <</button>
                 </a>
