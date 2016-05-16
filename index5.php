@@ -11,6 +11,25 @@ $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
 ?>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a href="login.php">Admin</a>
+                <a class="navbar-brand" href="start.php">LaptopFinder2016</a>
+            </div>
+             <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="75"
+  aria-valuemin="0" aria-valuemax="100" style="width:75%">
+    <span class="sr-only">75% Complete</span>
+  </div>
+</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
     <!-- Page Content -->
     <div class="container">
 
@@ -21,18 +40,22 @@ $count = 1;
                 </div>
                 <div class="row-container">
                     <?php 
+                    echo "<form name='mcForm' method='post' action='index4.php'>";
                     foreach ($rows as $row1 => $row11) {
                         if ($row1 < 8) continue;
-                    echo "<button class='btn-question3'>" . $row11['answer'] . "</button>
-                    <button class='btn-description3' id='btn-A" . $count . "'>Desc</button>
-                    <div class='answer-description' id='description-A" . $count . "'>
+                    echo "<div id='question'><button class='btn-description3' id='btn-A" . $count . "'>Desc</button><input type='radio' name='mcq' id='radio-choice-" . $count . "' value='" . $count . "' />
+                        <label for='radio-choice-" . $count . "' onclick=''>" . $row11['answer'] . "</label></div>
+                        <div class='answer-description' id='description-A" . $count . "'>
                         <p>" . $row11['description'] . "</p>
                     </div>";
                     $count++;
+                
                     if ($count == 5) {
                         break;
-                    }
-                    } ?>
+                    } }
+                    echo "</form>";
+
+                    ?>
 
                     <!-- <button class="btn-question3">A3</button>
                     <button class="btn-description3" id="btn-A3">Desc</button>

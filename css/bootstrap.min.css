@@ -8068,7 +8068,7 @@ body {
     float: right;
     /*    background-color: gray;*/
     width: 20%;
-    padding: 10px;
+    padding: 9px;
     color: black
 }
 
@@ -8213,4 +8213,38 @@ body {
 
 .btn1 {
     color: black;
+}
+#question label {
+    color:#000000;
+    padding:10px 15px;
+    margin-top:5px;
+    display:block;
+
+    background: lightgray; /* Old browsers */
+    
+    border: 1px solid #666666;
+
+
+    cursor: hand; cursor: pointer;
+    
+}
+
+#question input {
+    display: none;
+}
+
+#question input:checked + label {
+    color:#FFFFFF;
+    font-weight:bold;
+    background: #396B9E; /* Old browsers */
+    background: -moz-linear-gradient(top,  #5F9CC5 0%, #396B9E 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5F9CC5), color-stop(100%,#396B9E)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #5F9CC5 0%,#396B9E 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #5F9CC5 0%,#396B9E 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #5F9CC5 0%,#396B9E 100%); /* IE10+ */
+    background: linear-gradient(top,  #5F9CC5 0%,#396B9E 100%); /* W3C */
+
+}
+#question {
+width:100%;
 }
