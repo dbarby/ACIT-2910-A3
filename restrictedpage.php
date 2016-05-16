@@ -151,7 +151,8 @@
                     $(document).ready(function() {
 
                         $('#serviceButton').click(function() {
-                            $('#tableArea').load('PriceEditor.html');
+                            $('#tableArea').load('laptopAdderInterface.html');
+                            //$('#tableArea').load('./laptopAdder')
                         });
                         $('#adminAccButton').click(function() {
                             $('#tableArea').load('AdminEditor.html');
