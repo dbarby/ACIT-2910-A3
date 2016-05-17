@@ -17,9 +17,9 @@ $(document).ready(function () {
 
     // LOAD ALL PRODUCTS
     var form = $('#laptopAdderForm');
-    form.submit(function(ev){
+    form.submit(function (ev) {
         ev.preventDefault();
-//    $("#finished").click(function () {
+        //    $("#finished").click(function () {
 
         //retrieve laptop info
         var laptopInfo = $("#laptopAdderList input");
@@ -54,20 +54,20 @@ $(document).ready(function () {
                 $("#laptopAdderList").hide();
                 $("#finished").hide();
                 $("#addALaptopBtn").show();
-               Lobibox.alert("success", //AVAILABLE TYPES: "error", "info", "success", "warning"
-                {
-                    msg: "Laptop successfully added to the database.",
-                        
-                });
+                Lobibox.alert("success", //AVAILABLE TYPES: "error", "info", "success", "warning"
+                    {
+                        msg: "Laptop successfully added to the database.",
+
+                    });
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR.statusText, textStatus);
-            Lobibox.alert("error", //AVAILABLE TYPES: "error", "info", "success", "warning"
-                {
-                    msg: "There has been an error. Please check your inputs.",
-                        
-                });
-            }            
+                Lobibox.alert("error", //AVAILABLE TYPES: "error", "info", "success", "warning"
+                    {
+                        msg: "There has been an error. Please check your inputs.",
+
+                    });
+            }
         });
         var shoppingCartList = $("#shoppingCart").html("");
     });
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
     $("#addALaptopBtn").click(function () {
         if (clicks == 0) {
-            
+
             $.ajax({
                 url: "./laptopInfo.php",
                 type: "GET",
@@ -83,7 +83,6 @@ $(document).ready(function () {
                 success: function (returnedData) {
                     //console.log("cart checkout response: ", returnedData);
                     $("#laptopAdderList").html(returnedData);
-
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(jqXHR.statusText, textStatus);

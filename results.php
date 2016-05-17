@@ -6,7 +6,7 @@ $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
 ?>
-<!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,7 +14,7 @@ $count = 1;
                 <a href="login.php">Admin</a>
                 <a class="navbar-brand" href="start.php">LaptopFinder2016</a>
             </div>
-             
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
@@ -33,17 +33,25 @@ $count = 1;
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
                         there is one in focus and two below it.-->
                     <div class="zoom-result-container">
-                        <?php 
+                        <?php
+                    
                     foreach ($rows as $row) {
+                        if($count == 1){
+                            $item1Name = $row["p_name"];
+                        }else if($count == 2){
+                            $item2Name = $row["p_name"];
+                        }else if($count ==3){
+                            $item3Name = $row["p_name"];
+                        }
                     echo '
                     
                     <div class="zoom-result">
                         <div class="zoom-rank" >
                             <p id="rank-' . $count . '">#' . $count . '</p>
                         </div>
-                        <div class="zoom-image">
+                        <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-                            <a href="wheretobuy'.$count.'.php">Where to buy</a>
+                            <a id="WTBbtn-'.$count.'" href=#>Where to buy</a>
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -55,6 +63,9 @@ $count = 1;
                         </div>
                     </div>';
                     $count++;
+                    if($count > 3){
+                        break;
+                    }
                 }
                     ?>
 
@@ -168,6 +179,9 @@ $count = 1;
     <!--    <script src="js/jquery.js"></script>-->
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/lobibox.min.css">
+
+    <script src="js/lobibox.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -218,6 +232,54 @@ $count = 1;
                 'lessText': 'LESS SPECS',
                 'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             });
+
+           
+            $('#WTBbtn-1').click(function() {
+                Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
+                    {
+                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        width:350,
+                        title: 'Where to buy the <?php echo $item1Name ?>'
+                    });
+            });
+            $('#WTBbtn-2').click(function() {
+                Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
+                    {
+                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        width:350,
+                        title: 'Where to buy the <?php echo $item2Name ?>'
+                    });
+            });
+            $('#WTBbtn-3').click(function() {
+                Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
+                    {
+                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        width:350,
+                        title: 'Where to buy the <?php echo $item3Name ?>'
+                    });
+            });
+
+            //            $('#zoom-image-1 ul.item-1').hideMaxListItems({
+            //                'max': 0,
+            //                'speed': 2000,
+            //                'moreText': 'Where to buy',
+            //                'lessText': 'LESS SPECS',
+            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
+            //            });
+            //            $('#zoom-image-2 ul.item-2').hideMaxListItems({
+            //                'max': 0,
+            //                'speed': 2000,
+            //                'moreText': 'Where to buy',
+            //                'lessText': 'LESS SPECS',
+            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
+            //            });
+            //            $('#zoom-image-3 ul.item-3').hideMaxListItems({
+            //                'max': 0,
+            //                'speed': 2000,
+            //                'moreText': 'Where to buy',
+            //                'lessText': 'LESS SPECS',
+            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
+            //            });
 
 
         });
