@@ -27,16 +27,7 @@ $count = 1;
         <div class="results-container">
             <form>
                 <div id="results-header">
-                    <label>Your Results!
-                    <?php if(!isset($_COOKIE["q1"])) {
-    echo "Cookie is not set!";
-} else {
-    echo "Value for q1 is: " . $_COOKIE["q1"];
-    echo "Value for q2 is: " . $_COOKIE["q2"];
-    echo "Value for q3 is: " . $_COOKIE["q3"];
-}
-?>
-</label>
+                    <label>Your Results!</label>
                 </div>
                 <div class="row-container">
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
