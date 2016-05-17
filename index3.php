@@ -10,14 +10,18 @@ $statement = $conn->prepare($ans);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
+
+
+
 ?>
+
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a href="login.php">Admin</a>
-                <a class="navbar-brand" href="start.php">LaptopFinder2016</a>
+                <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              <div class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="25"
@@ -34,26 +38,42 @@ $count = 1;
     <div class="container">
 
         <div class="survey-container">
-            <form>
                 <div class="label1">
-                    <label><?php echo $row->question; ?></label>
+                    <label>
+                    <?php 
+                    echo $row->question;                        
+                     ?>
+                         
+                     </label>
                 </div>
                 <div class="row-container">
 
                     <?php 
-                    echo "<form name='mcForm' method='post' action='index4.php'>";
+                    
+                    echo "<form id='mcForm' name='mcForm' method='POST' action='index4.php'>";
+
                     foreach ($rows as $row1 => $row11) {
-                    echo "<div id='question'><button class='btn-description3' id='btn-A" . $count . "'>Desc</button><input type='radio' name='mcq' id='radio-choice-" . $count . "' value='" . $count . "' />
-                        <label for='radio-choice-" . $count . "' onclick=''>" . $row11['answer'] . "</label></div>
+                        echo 
+                        "<div id='question'>
+                            <button class='btn-description3' id='btn-A" . $count . "'>
+                                Desc
+                            </button>
+                            <input type='radio' onclick='javascript: submit()' name='mcq' id='radio-choice-" . $count . "' value='chicken".$count."' />
+                            <label for='radio-choice-" . $count . "'>
+                                " . $row11['answer'] . "
+                            </label>
+                        </div>
                         <div class='answer-description' id='description-A" . $count . "'>
-                        <p>" . $row11['description'] . "</p>
-                    </div>";
-                    $count++;
-                
-                    if ($count == 5) {
-                        break;
-                    } }
+                            <p>" . $row11['description'] . "</p>
+                        </div>";
+                        $count++;
+                    
+                        if ($count == 5) {
+                            break;
+                        }
+                     }
                     echo "</form>";
+                    
 
                     ?>
                     <?php
@@ -74,7 +94,8 @@ $count = 1;
                     // if ($count == 5) {
                     //      break;
                     //  }
-                    //}?>
+                    //}
+?>
                     
 
                     <!-- <button class="btn-question3">A3</button>
@@ -100,11 +121,11 @@ $count = 1;
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
     <script type='text/javascript'>
 
- $(document).ready(function() { 
-   $('input[name=mcq]').change(function(){
-        $('form').submit();
-   });
-  });
+ // $(document).ready(function() { 
+ //   $('input[name=mcq]').change(function(){
+ //        $('#mcForm').submit();
+ //   });
+
 
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -112,6 +133,18 @@ $count = 1;
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+    // document.getElementById("radio-choice-1").onclick = function () {
+    //     location.href = "index4.php";
+    // };
+    // document.getElementById("radio-choice-2").onclick = function () {
+    //     location.href = "index4.php";
+    // };
+    // document.getElementById("radio-choice-3").onclick = function () {
+    //     location.href = "index4.php";
+    // };
+    // document.getElementById("radio-choice-4").onclick = function () {
+    //     location.href = "index4.php";
+    // };
         $(document).ready(function() {
             $('#description-A1,#description-A2,#description-A3,#description-A4 ').hide();
             
@@ -157,7 +190,7 @@ $count = 1;
                 <button type="submit" class="btn-footer">
                     <</button>
             </a>
-            <a href="index4.php.">
+            <a href="index4.php">
                 <button class="btn-footer">></button>
             </a>
         </div>
