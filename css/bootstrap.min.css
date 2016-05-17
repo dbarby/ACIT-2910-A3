@@ -8154,7 +8154,8 @@ body {
 
 
 .zoom-result {
-    min-height:100px;   
+    min-height:120px;   
+    height: auto;
 
 }
 
@@ -8163,7 +8164,7 @@ body {
     float: left;
     background-color: azure;
     color: black;
-    
+    height: auto; 
 }
 
 .compare-category-header button {
@@ -8177,8 +8178,9 @@ body {
     float: left;
     background-color: azure;
     color: black;
-    height: 100%;
+    height: auto;
     font-size: 10pt;
+/*    min-height: 120px;*/
 }
 .zoom-description ul{
    
