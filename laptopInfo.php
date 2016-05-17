@@ -20,8 +20,11 @@ loadScripts();
             foreach($rows as $row) {
                     $required = false;
                     $dropdown = false;
+                    $hidden = false;
                     $placeHolder = " ";//prevent possible syntax error
                 $desc = $row['column_name'];
+                
+                
                 
                 if($desc == 'p_name'){
                     $email = $desc;
@@ -172,7 +175,7 @@ loadScripts();
                 }else{
                     $disp = $desc;
                 }
-                
+                if($disp != 'p_id'){
                 if($required == true){
                 $html .= "                            
                             <tr>
@@ -208,6 +211,7 @@ loadScripts();
                             <td><input data-laptop-info ='$desc' type='text' placeholder='$placeHolder' /></td>
                             
                             <tr>";             
+                }
                 }
                                     
             }
