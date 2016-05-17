@@ -51,11 +51,7 @@ $count = 1;
                         </div>
                         <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-<<<<<<< HEAD
                             <a id="WTBbtn-'.$count.'" href=#>Where to buy</a>
-=======
-                        <a href="wheretobuy'.$count.'.php">Where to buy</a>
->>>>>>> refs/remotes/origin/master
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -98,6 +94,9 @@ $count = 1;
                                     <td>" . $row['battery'] . " hours</td>
                                 </tr>";
                                 $bat++;
+                                if($bat>3){
+                                    break;
+                                }
                                 }?>
                                     <!-- <tr>
                                     <td><b>2</b></td>
@@ -132,6 +131,9 @@ $count = 1;
                                     <td>" . $row['res_width'] . "x" . $row['res_height'] . "</td>
                                 </tr>";
                                 $scn++;
+                                if($scn>3){
+                                    break;
+                                }
                                 }?>
                                     <!-- <tr>
                                     <td><b>2</b></td>
@@ -236,7 +238,6 @@ $count = 1;
                 'lessText': 'LESS SPECS',
                 'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             });
-<<<<<<< HEAD
 
            
             $('#WTBbtn-1').click(function() {
@@ -264,32 +265,6 @@ $count = 1;
                     });
             });
 
-            //            $('#zoom-image-1 ul.item-1').hideMaxListItems({
-            //                'max': 0,
-            //                'speed': 2000,
-            //                'moreText': 'Where to buy',
-            //                'lessText': 'LESS SPECS',
-            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
-            //            });
-            //            $('#zoom-image-2 ul.item-2').hideMaxListItems({
-            //                'max': 0,
-            //                'speed': 2000,
-            //                'moreText': 'Where to buy',
-            //                'lessText': 'LESS SPECS',
-            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
-            //            });
-            //            $('#zoom-image-3 ul.item-3').hideMaxListItems({
-            //                'max': 0,
-            //                'speed': 2000,
-            //                'moreText': 'Where to buy',
-            //                'lessText': 'LESS SPECS',
-            //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
-            //            });
-
-=======
-            
-         
->>>>>>> refs/remotes/origin/master
 
         });
 
