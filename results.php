@@ -50,9 +50,9 @@ $count = 1;
                         <div class="zoom-rank" >
                             <p id="rank-' . $count . '">#' . $count . '</p>
                         </div>
-                        <div class="zoom-image">
+                        <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-                            <a href="wheretobuy'.$count.'.php">Where to buy</a>
+                        <a href="wheretobuy'.$count.'.php">Where to buy</a>
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -227,7 +227,8 @@ $count = 1;
                 'lessText': 'LESS SPECS',
                 'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             });
-
+            
+         
 
         });
 
