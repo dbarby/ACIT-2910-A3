@@ -12,7 +12,7 @@ $count = 1;
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a href="login.php">Admin</a>
-                <a class="navbar-brand" href="start.php">LaptopFinder2016</a>
+                <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +27,16 @@ $count = 1;
         <div class="results-container">
             <form>
                 <div id="results-header">
-                    <label>Your Results!</label>
+                    <label>Your Results!
+                    <?php if(!isset($_COOKIE["q1"])) {
+    echo "Cookie is not set!";
+} else {
+    echo "Value for q1 is: " . $_COOKIE["q1"];
+    echo "Value for q2 is: " . $_COOKIE["q2"];
+    echo "Value for q3 is: " . $_COOKIE["q3"];
+}
+?>
+</label>
                 </div>
                 <div class="row-container">
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
@@ -51,7 +60,11 @@ $count = 1;
                         </div>
                         <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
+<<<<<<< HEAD
                             <a id="WTBbtn-'.$count.'" href=#>Where to buy</a>
+=======
+                        <a href="wheretobuy'.$count.'.php">Where to buy</a>
+>>>>>>> refs/remotes/origin/master
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -232,6 +245,7 @@ $count = 1;
                 'lessText': 'LESS SPECS',
                 'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             });
+<<<<<<< HEAD
 
            
             $('#WTBbtn-1').click(function() {
@@ -281,6 +295,10 @@ $count = 1;
             //                'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             //            });
 
+=======
+            
+         
+>>>>>>> refs/remotes/origin/master
 
         });
 
