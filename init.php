@@ -10,7 +10,6 @@ $scripts = array('DBconnector.php',
                  'LaptopManager.php',
                  'ProductManager.php',
                  'UserManager.php',
-                 'ResultCalculator',
                  'Utils.php');
 
     $subDir = "src";
