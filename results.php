@@ -154,7 +154,14 @@ $count = 1;
                     <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
-                            <p>Comparison</p>
+                            <p>
+                            <?php 
+                            for ($c = 1; $c < 13; $c++) {
+                                $b = "q" . $c;
+                                echo $b . " is " . $_COOKIE[$b] . "<br>";
+                            }
+                            ?>
+                            </p>
                         </div>
                     </div>
                     <!--
