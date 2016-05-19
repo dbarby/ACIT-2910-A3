@@ -1,6 +1,9 @@
-
 <?php 
-setcookie("q1", $_POST["mcq"], time() + (86400 * 30), "/");
+
+if (!empty($_POST))
+{
+    setcookie("q1", $_POST["mcq"], time() + (86400 * 30), "/");
+}
 include 'header.php';
 
 $sql = 'SELECT question FROM question WHERE q_id = 2';
@@ -12,9 +15,6 @@ $statement = $conn->prepare($ans);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
-
-
-
 ?>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -25,9 +25,9 @@ $count = 1;
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="50"
-  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-    <span class="sr-only">50% Complete</span>
+  <div class="progress-bar" role="progressbar" aria-valuenow="16"
+  aria-valuemin="0" aria-valuemax="100" style="width:16%">
+    <span class="sr-only">16% Complete</span>
   </div>
 </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,8 +40,7 @@ $count = 1;
 
         <div class="survey-container">
                 <div class="label1">
-                    <label><?php echo $row->question; 
-                    ?></label>
+                    <label><?php echo $row->question;?></label>
                 </div>
                 <div class="row-container">
                     <?php 
@@ -55,7 +54,7 @@ $count = 1;
                             <button class='btn-description3' id='btn-A" . $count . "'>
                                 Desc
                             </button>
-                            <input type='radio' onclick='javascript: submit()' name='mcq' id='radio-choice-" . $count . "' value='chicken".$count."' />
+                            <input type='radio' onclick='javascript: submit()' name='mcq' id='radio-choice-" . $count . "' value='".$count."' />
                             <label for='radio-choice-" . $count . "'>
                                 " . $row11['answer'] . "
                             </label>
@@ -70,20 +69,7 @@ $count = 1;
                         }
                      }
                     echo "</form>";
-                    
-
-
                     ?>
-                    <!-- <button class="btn-question3">A3</button>
-                    <button class="btn-description3" id="btn-A3">Desc</button>
-                    <div class="answer-description" id="description-A3">
-                        <p>Description 3</p>
-                    </div>
-                    <button class="btn-question3">A4</button>
-                    <button class="btn-description3" id="btn-A4">Desc</button>
-                    <div class="answer-description" id="description-A4">
-                        <p>Description 4</p>
-                    </div> -->
                 </div>
             </form>
         </div>
@@ -100,20 +86,6 @@ $count = 1;
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-
-
-    // document.getElementById("radio-choice-1").onclick = function () {
-    //     location.href = "index5.php";
-    // };
-    // document.getElementById("radio-choice-2").onclick = function () {
-    //     location.href = "index5.php";
-    // };
-    // document.getElementById("radio-choice-3").onclick = function () {
-    //     location.href = "index5.php";
-    // };
-    // document.getElementById("radio-choice-4").onclick = function () {
-    //     location.href = "index5.php";
-    // };
         $(document).ready(function() {
             $('#description-A1,#description-A2,#description-A3,#description-A4 ').hide();
             
@@ -158,9 +130,6 @@ $count = 1;
             <a href="index3.php">
                 <button type="submit" class="btn-footer">
                     <</button>
-            </a>
-            <a href="index5.php">
-                <button class="btn-footer">></button>
             </a>
         </div>
     </div>
