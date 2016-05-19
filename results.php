@@ -5,6 +5,30 @@ $statement = $conn->prepare($res);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
+
+ foreach ($rows as $row) {
+                        if($count == 1){
+                            $item1Name = $row["p_name"];
+                            $item1 = $row["brand"];
+                            $item1 = $row["ram"];
+                            $item1 = $row["storage_size"];
+                            $item1 = $row["storage_type"];
+                            $item1 = $row["cpu"];
+                            $item1 = $row["proc_speed"];
+                            $item1 = $row["proc_cores"];
+                            $item1 = $row["graphics"];
+                            $item1 = $row["display"];
+                            $item1 = $row["screen_size"];
+                            $item1 = $row["res_height"];
+                            $item1 = $row["res_width"];
+                            $item1 = $row["price"];
+                            $item1 = $row[""];
+                            $item1 = $row[""];
+                        }else if($count == 2){
+                            $item2Name = $row["p_name"];
+                        }else if($count ==3){
+                            $item3Name = $row["p_name"];
+                        }
 ?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -35,14 +59,7 @@ $count = 1;
                     <div class="zoom-result-container">
                         <?php
                     
-                    foreach ($rows as $row) {
-                        if($count == 1){
-                            $item1Name = $row["p_name"];
-                        }else if($count == 2){
-                            $item2Name = $row["p_name"];
-                        }else if($count ==3){
-                            $item3Name = $row["p_name"];
-                        }
+                   
                     echo '
                     
                     <div class="zoom-result">
@@ -154,14 +171,7 @@ $count = 1;
                     <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
-                            <p>
-                            <?php 
-                            for ($c = 1; $c < 13; $c++) {
-                                $b = "q" . $c;
-                                echo $b . " is " . $_COOKIE[$b] . "<br>";
-                            }
-                            ?>
-                            </p>
+                            <p>Comparison</p>
                         </div>
                     </div>
                     <!--
