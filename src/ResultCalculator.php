@@ -5,16 +5,11 @@
 //$um = new UserManager();
 
 // Facade
-class Result Calculator {
 
-    private $db;
-
-    public function __construct() {
-        $this->db = DBConnector::getInstance();             
-    }
     
     //SHould the handling be done in the constructor?
     //Grab cookies here and assign them to $Q1Answer etc.
+
     //Question 1 Handling
     if($_COOKIE[q1] == 1){
             $Q1A = "screen_size < 13";
@@ -48,9 +43,9 @@ class Result Calculator {
     //Q4
         if($_COOKIE[q4] == 1){
             $Q4A = "graphics_rating <= 2";
-        }elseif ($_COOKIE[q4 == 2){
+        }elseif ($_COOKIE[q4] == 2){
             $Q4A = "graphics_rating <= 3 AND graphics_rating >= 2";
-        }else if ($_COOKIE[q4 == 3){
+        }else if ($_COOKIE[q4] == 3){
             $Q4A = "graphics_rating = 5 AND battery > 8";
     //Q5
         if($_COOKIE[q5] == 1){
@@ -71,7 +66,7 @@ class Result Calculator {
             $Q6A = "LOWER (product.os) like ‘'%chrome%'";
         }
     //Q7
-        if($_COOKIE[q]7 == 1){
+        if($_COOKIE[q7] == 1){
             $Q7A = "storage_size <= 128";
         }elseif ($_COOKIE[q7] == 2){
             $Q7A = "storage_size <= 512 AND storage_size >=128";
@@ -100,14 +95,14 @@ class Result Calculator {
         }else if ($_COOKIE[q10] == 3){
             $Q10A = "touch = 0";
         }
-    //Q11, need to make raiting for ports
+    //Q11
         if($_COOKIE[q11] == 1){
             $Q11A = "port_rating <=1";
         }elseif ($_COOKIE[q11] == 2){
             $Q11A = "port_rating = 2";
         }
+    //Q12
         if($_COOKIE[q12] == 1){
-            //need to make rating columns for laptops still
             $Q12A = "performance_rating desc";
         }elseif ($_COOKIE[q12] == 2){
             $Q12A = "battery";
@@ -116,15 +111,8 @@ class Result Calculator {
         }
 
 
-    public function calculateResults($Q1A, $Q2A, $Q3A, $Q4A, $Q5A, $Q6A, $Q7A, $Q8A, $Q9A, $Q10A, $Q11A, $Q12A) {
-        $sql = "SELECT * FROM product WHERE '$Q1A' AND '$Q2A' AND '$Q3A' AND '$Q4A' AND '$Q5A' AND '$Q6A' AND '$Q7A' AND '$Q8A' AND '$Q9A' AND '$Q10A' AND '$Q11A' ORDER BY '$Q12A'; ";
-        
-        $affectedRows = $this->db->affectRows($sql);
-        return $affectedRows;
-    }
-    
+        $sql = "SELECT * FROM product WHERE " . $Q1A . " AND " . $Q2A . " AND " . $Q3A . " AND " . $Q4A . " AND " . $Q5A . " AND " . $Q6A . " AND " . $Q7A . " AND " . $Q8A . " AND " . $Q9A . " AND " . $Q10A . " AND " . $Q11A . " ORDER BY " . $Q12A ;
 
 
-}
 
-?>
+?> 
