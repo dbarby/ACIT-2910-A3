@@ -48,7 +48,7 @@ $count = 1;
                     echo "<form id='mcForm' name='mcForm' method='POST' action='index8.php'>";
 
                     foreach ($rows as $row1 => $row11) {
-                        if ($row1 < 16) continue;
+                        if ($row1 < 15) continue;
                         echo 
                         "<div id='question'>
                             <button class='btn-description3' id='btn-A" . $count . "'>
@@ -64,7 +64,7 @@ $count = 1;
                         </div>";
                         $count++;
                     
-                        if ($count == 4) {
+                        if ($count == 5) {
                             break;
                         }
                      }
