@@ -2,11 +2,11 @@
 
 if (!empty($_POST))
 {
-    setcookie("q2", $_POST["mcq"], time() + (86400 * 30), "/");
+    setcookie("q8", $_POST["mcq"], time() + (86400 * 30), "/");
 }
 include 'header.php';
 
-$sql = 'SELECT question FROM question WHERE q_id = 3';
+$sql = 'SELECT question FROM question WHERE q_id = 9';
 $q = $conn->query($sql);
 $row = $q->fetchObject();
 
@@ -25,9 +25,9 @@ $count = 1;
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="24"
-  aria-valuemin="0" aria-valuemax="100" style="width:24%">
-    <span class="sr-only"24% Complete</span>
+  <div class="progress-bar" role="progressbar" aria-valuenow="72"
+  aria-valuemin="0" aria-valuemax="100" style="width:72%">
+    <span class="sr-only">72% Complete</span>
   </div>
 </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,10 +45,10 @@ $count = 1;
                 <div class="row-container">
                     <?php 
                     
-                    echo "<form id='mcForm' name='mcForm' method='POST' action='index6.php'>";
+                    echo "<form id='mcForm' name='mcForm' method='POST' action='index12.php'>";
 
                     foreach ($rows as $row1 => $row11) {
-                        if ($row1 < 8) continue;
+                        if ($row1 < 28) continue;
                         echo 
                         "<div id='question'>
                             <button class='btn-description3' id='btn-A" . $count . "'>
@@ -64,7 +64,7 @@ $count = 1;
                         </div>";
                         $count++;
                     
-                        if ($count == 5) {
+                        if ($count == 3) {
                             break;
                         }
                      }
@@ -127,7 +127,7 @@ $count = 1;
 <footer>
     <div class="footerholder">
         <div class="footer">
-            <a href="index4.php">
+            <a href="index10.php">
                 <button type="submit" class="btn-footer">
                     <</button>
             </a>
