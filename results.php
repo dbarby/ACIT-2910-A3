@@ -1,7 +1,8 @@
 <?php include 'header.php';
+include 'resultCalculator.php';
 
 $res = 'SELECT * FROM product'; 
-$statement = $conn->prepare($res);
+$statement = $conn->prepare($sql);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
@@ -9,26 +10,99 @@ $count = 1;
  foreach ($rows as $row) {
                         if($count == 1){
                             $item1Name = $row["p_name"];
-                            $item1 = $row["brand"];
-                            $item1 = $row["ram"];
-                            $item1 = $row["storage_size"];
-                            $item1 = $row["storage_type"];
-                            $item1 = $row["cpu"];
-                            $item1 = $row["proc_speed"];
-                            $item1 = $row["proc_cores"];
-                            $item1 = $row["graphics"];
-                            $item1 = $row["display"];
-                            $item1 = $row["screen_size"];
-                            $item1 = $row["res_height"];
-                            $item1 = $row["res_width"];
-                            $item1 = $row["price"];
-                            $item1 = $row[""];
-                            $item1 = $row[""];
+                            $item1Brand = $row["brand"];
+                            $item1RAM = $row["ram"];
+                            $item1StorageSize = $row["storage_size"];
+                            $item1StorageType = $row["storage_type"];
+                            $item1CPU = $row["cpu"];
+                            $item1ProcSpeed = $row["proc_speed"];
+                            $item1ProcCores = $row["proc_cores"];
+                            $item1GraphicsCard = $row["graphics"];
+                            $item1DisplaySize = $row["display"];
+                            $item1ScreenSize = $row["screen_size"];
+                            $item1ResHeight = $row["res_height"];
+                            $item1ResWidth = $row["res_width"];
+                            $item1Price = $row["price"];
+                            $item1Weight = $row["weight"];
+                            $item1OS = $row["os"];
+                            $item1BatteryLife = $row["battery"];
+                            $item1ReleaseYear = $row["release_year"];
+                            if($row["touch"] == 1){
+                                $item1TouchScreen = "YES";
+                            }elseif ($row["touch"] == 0){
+                                $item1TouchScreen = "NO";  
+                                }
+                            $item1Height = $row["height"];
+                            $item1Width = $row["width"];
+                            $item1Depth = $row["depth"];
+                            $item1Pic = $row["pic"];
+                            $item1PicURL = $row["picurl"];
                         }else if($count == 2){
                             $item2Name = $row["p_name"];
+                            $item2Brand = $row["brand"];
+                            $item2RAM = $row["ram"];
+                            $item2StorageSize = $row["storage_size"];
+                            $item2StorageType = $row["storage_type"];
+                            $item2CPU = $row["cpu"];
+                            $item2ProcSpeed = $row["proc_speed"];
+                            $item2ProcCores = $row["proc_cores"];
+                            $item2GraphicsCard = $row["graphics"];
+                            $item2DisplaySize = $row["display"];
+                            $item2ScreenSize = $row["screen_size"];
+                            $item2ResHeight = $row["res_height"];
+                            $item2ResWidth = $row["res_width"];
+                            $item2Price = $row["price"];
+                            $item2Weight = $row["weight"];
+                            $item2OS = $row["os"];
+                            $item2BatteryLife = $row["battery"];
+                            $item2ReleaseYear = $row["release_year"];
+                            if($row["touch"] == 1){
+                                $item2TouchScreen = "YES";
+                            }elseif ($row["touch"] == 0){
+                                $item2TouchScreen = "NO";  
+                                }
+                            $item2Height = $row["height"];
+                            $item2Width = $row["width"];
+                            $item2Depth = $row["depth"];
+                            $item2Pic = $row["pic"];
+                            $item2PicURL = $row["picurl"];
                         }else if($count ==3){
                             $item3Name = $row["p_name"];
+                            $item3Brand = $row["brand"];
+                            $item3RAM = $row["ram"];
+                            $item3StorageSize = $row["storage_size"];
+                            $item3StorageType = $row["storage_type"];
+                            $item3CPU = $row["cpu"];
+                            $item3ProcSpeed = $row["proc_speed"];
+                            $item3ProcCores = $row["proc_cores"];
+                            $item3GraphicsCard = $row["graphics"];
+                            $item3DisplaySize = $row["display"];
+                            $item3ScreenSize = $row["screen_size"];
+                            $item3ResHeight = $row["res_height"];
+                            $item3ResWidth = $row["res_width"];
+                            $item3Price = $row["price"];
+                            $item3Weight = $row["weight"];
+                            $item3OS = $row["os"];
+                            $item3BatteryLife = $row["battery"];
+                            $item3ReleaseYear = $row["release_year"];
+                           if($row["touch"] == 1){
+                                $item3TouchScreen = "YES";
+                            }elseif ($row["touch"] == 0){
+                                $item3TouchScreen = "NO";  
+                                }
+                            $item3Height = $row["height"];
+                            $item3Width = $row["width"];
+                            $item3Depth = $row["depth"];
+                            $item3Pic = $row["pic"];
+                            $item3PicURL = $row["picurl"];
                         }
+     $count++;
+     if($count > 3){
+        $count = 1;
+        break;
+     }
+ }
+ 
 ?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -58,8 +132,8 @@ $count = 1;
                         there is one in focus and two below it.-->
                     <div class="zoom-result-container">
                         <?php
-                    
-                   
+                    $count = 1;
+                   foreach ($rows as $row){
                     echo '
                     
                     <div class="zoom-result">
@@ -171,7 +245,62 @@ $count = 1;
                     <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
-                            <p>Comparison</p>
+                            <table>
+                                <tr>
+                                    <td><b></b></td>
+                                    <td><b><?php echo $item1Name ?></b></td>
+                                    <td><b><?php echo $item2Name ?></b></td>
+                                    <td><b><?php echo $item3Name ?></b></td>
+                                </tr>
+                                <tr>
+                                    <td><b>RAM</b></td>
+                                    <td>
+                                        <?php echo $item1RAM ?>GB
+                                    </td>
+                                    <td>
+                                        <?php echo $item2RAM ?>GB
+                                    </td>
+                                    <td>
+                                        <?php echo $item3RAM ?>GB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Storage Size</b></td>
+                                    <td>
+                                        <?php echo $item1StorageSize."GB"  ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2StorageSize."GB" ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3StorageSize."GB" ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Storage Type</b></td>
+                                    <td>
+                                        <?php echo $item1StorageType  ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item1StorageType ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item1StorageType ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Touch Screen</b></td>
+                                    <td>
+                                        <?php echo $item1TouchScreen ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2TouchScreen ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3TouchScreen ?>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <!--
@@ -256,12 +385,12 @@ $count = 1;
                 'moreHTML': '<p class="maxlist-more"><a href="#">MORE OF THEM</a></p>'
             });
 
-           
+
             $('#WTBbtn-1').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
                         msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
-                        width:350,
+                        width: 350,
                         title: 'Where to buy the <?php echo $item1Name ?>'
                     });
             });
@@ -269,7 +398,7 @@ $count = 1;
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
                         msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
-                        width:350,
+                        width: 350,
                         title: 'Where to buy the <?php echo $item2Name ?>'
                     });
             });
@@ -277,7 +406,7 @@ $count = 1;
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
                         msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
-                        width:350,
+                        width: 350,
                         title: 'Where to buy the <?php echo $item3Name ?>'
                     });
             });
@@ -291,7 +420,7 @@ $count = 1;
     <footer>
         <div class="footerholder">
             <div class="footer">
-                <a href="index5.php">
+                <a href="index14.php">
                     <button type="submit" class="btn-footer">
                         <</button>
                 </a>
