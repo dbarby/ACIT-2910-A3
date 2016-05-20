@@ -430,7 +430,7 @@ $count = 1;
             <div class="footer">
                 <a href="index14.php">
                     <button type="submit" class="btn-footer">
-                        <</button>
+                        <img src="img/back.png" /></button>
                 </a>
             </div>
         </div>
