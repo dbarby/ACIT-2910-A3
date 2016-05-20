@@ -8221,6 +8221,16 @@ button:focus {outline:0;}
     width: 100%;
 }
 
+#more-content table{
+    width: 100%;
+    
+}
+ tr:nth-child(odd){
+    background-color: white;
+}
+tr:nth-child(even) {
+    background-color: #e7f8f8;
+}
 .answer-description {
     background-color: #f4f4f4;
     color: #575757;
