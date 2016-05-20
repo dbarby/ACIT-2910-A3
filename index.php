@@ -4,7 +4,6 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="login.php">Admin</a>
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              
@@ -17,12 +16,12 @@
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row title1">
-            <br><br>
+        <div class="row">
+            <div class="title1">
             <label>Find your perfect laptop now! Click below to begin your search</label>
-            <br><br><br><br><br><br>
+            </div>
             <a href="index3.php">
-                <button type="submit" class="btn-question">Begin</button>
+                <button type="submit" class="btn btn-default btn-question">Begin</button>
             </a>
         </div>
         <!-- /.row -->

@@ -12,13 +12,11 @@ $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
 ?>
-
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="login.php">Admin</a>
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
              <div class="progress">
@@ -48,7 +46,7 @@ $count = 1;
                         echo 
                         "<div id='question'>
                             <button class='btn-description3' id='btn-A" . $count . "'>
-                                Desc
+                                <img src='img/info.png' />
                             </button>
                             <input type='radio' onclick='javascript: submit()' name='mcq' id='radio-choice-" . $count . "' value='".$count."' />
                             <label for='radio-choice-" . $count . "'>
@@ -125,7 +123,8 @@ $count = 1;
         <div class="footer">
             <a href="index.php">
                 <button type="submit" class="btn-footer">
-                    <</button>
+                    <img src="img/back.png" />
+                    </button>
             </a>
         </div>
     </div>
