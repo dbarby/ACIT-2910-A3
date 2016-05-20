@@ -97,7 +97,7 @@ $count = 1;
                             $item3PicURL = $row["picurl"];
                         }
      $count++;
-     if($count >= 3){
+     if($count > 3){
         $count = 1;
         break;
      }
@@ -420,7 +420,7 @@ $count = 1;
     <footer>
         <div class="footerholder">
             <div class="footer">
-                <a href="index5.php">
+                <a href="index14.php">
                     <button type="submit" class="btn-footer">
                         <</button>
                 </a>
