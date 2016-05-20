@@ -93,13 +93,13 @@
             $Q9A = "touch = 1";
         }
     //Q10
-        if($_COOKIE['q10'] == 1){
-            $Q10A = "touch = 1 OR touch = 0";
-        }elseif ($_COOKIE['q10'] == 2){
-            $Q10A = "touch = 1";
-        }else if ($_COOKIE['q10'] == 3){
-            $Q10A = "touch = 0";
-        }
+        // if($_COOKIE['q10'] == 1){
+        //     $Q10A = "touch = 1 OR touch = 0";
+        // }elseif ($_COOKIE['q10'] == 2){
+        //     $Q10A = "touch = 1";
+        // }else if ($_COOKIE['q10'] == 3){
+        //     $Q10A = "touch = 0";
+        // }
     //Q11, need to make raiting for ports
         if($_COOKIE['q11'] == 1){
             $Q11A = "port_rating >=0";
