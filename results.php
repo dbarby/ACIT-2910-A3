@@ -109,7 +109,6 @@ $count = 1;
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="login.php">Admin</a>
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
 
@@ -125,7 +124,7 @@ $count = 1;
         <div class="results-container">
             <form>
                 <div id="results-header">
-                    <label>Your Results!</label>
+                    <label>Your Best Fit Laptops</label>
                 </div>
                 <div class="row-container">
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
@@ -138,11 +137,14 @@ $count = 1;
                     
                     <div class="zoom-result">
                         <div class="zoom-rank" >
-                            <p id="rank-' . $count . '">#' . $count . '</p>
+                            <p id="rank-' . $count . '">' . $count . '</p>
                         </div>
                         <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-                            <a id="WTBbtn-'.$count.'" href=#>Where to buy</a>
+                            
+                        </div>
+                        <div class="whereToBuy">
+                        <a class="WTBbtn" id="WTBbtn-'.$count.'" href=#>Where to buy</a>
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -152,6 +154,7 @@ $count = 1;
                                 <li>' . $row["graphics"] . '</li>
                             </ul>
                         </div>
+                        
                     </div>';
                     $count++;
                     if($count > 3){

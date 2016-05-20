@@ -8062,7 +8062,7 @@ body {
 .row-container {
     /*    margin-right: 20%;*/
     /*    margin-left: -15px;*/
-    background-color: azure;
+    background-color: white;
 }
 .zoom-result-container{
 /*    background-color: blue;*/
@@ -8125,7 +8125,7 @@ body {
 }
 
 #results-header {
-    background-color: gray;
+    background-color: #2D9E9C;
     padding: 20px;
     padding-top: 20px;
     text-align:center;
@@ -8135,9 +8135,11 @@ body {
 }
 
 #compare-header {
-    background-color: gray;
+    background-color: #2D9E9C;
     text-align: center;
-    height: 40px;
+    font-size: 20px;
+    padding-top: 10px;
+    height: 50px;
     width: 200%;
     
 }
@@ -8145,11 +8147,12 @@ body {
 .zoom-rank {
     width: 10%;
     float: left;
-    background-color: azure;
-    color: black;
-    height: 100%;
-    font-size: 15pt;
+    background-color: white;
+    color: #404040;
+    height: auto;
+    font-size: 25pt;
     font-weight:600;
+    padding-left: 10px;
 }
 
 
@@ -8162,22 +8165,30 @@ body {
 .zoom-image {
     width: 30%;
     float: left;
-    background-color: azure;
+    background-color: white;
     color: black;
     height: auto; 
 }
 
 .compare-category-header button {
-    color: black;
+    background-color: #23b5b2;
+    color: white;
     width: 100%;
     height: 40px;
-}
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-style: solid;  
+    box-shadow: 0px 0px 0px;
+    
+   }
+
+button:focus {outline:0;}
 
 .zoom-description {
     width: 60%;
     float: left;
-    background-color: azure;
-    color: black;
+    background-color: white;
+    color: #404040;
     height: auto;
     font-size: 10pt;
 /*    min-height: 120px;*/
@@ -8188,8 +8199,9 @@ body {
 
 .zoom-description #brand {
      font-weight: 600;
-    font-size: 11pt;
+    font-size: 15pt;
     padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .compare-content {
@@ -8229,6 +8241,22 @@ body {
     
 }
 
+.whereToBuy{
+    float: left;
+    position: absolute;
+    padding-top: 70px;
+
+}
+
+.whereToBuy a{
+    background-color:  #56bab8;
+    color: white;
+    padding-left: 50px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+
+}
 #question label {
     color:#000000;
     padding:10px 15px;
@@ -8241,12 +8269,18 @@ body {
 
 
     cursor: hand; cursor: pointer;
-    
+ 
+}
+
+.maxlist-more a{
+    color: #2D9E9C;
 }
 
 #question input {
     display: none;
 }
+
+
 
 #question input:checked + label {
     color:#FFFFFF;
