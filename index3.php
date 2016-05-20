@@ -2,6 +2,7 @@
 
 include 'header.php';
 
+
 $sql = 'SELECT question FROM question WHERE q_id = 1';
 $q = $conn->query($sql);
 $row = $q->fetchObject();

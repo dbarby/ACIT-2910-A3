@@ -98,12 +98,12 @@ $count = 1;
                         }
      $count++;
      if($count > 3){
-        $count = 1;
         break;
      }
  }
  
 ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -111,7 +111,12 @@ $count = 1;
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
-
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="100"
+  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+    <span class="sr-only">100% Complete</span>
+  </div>
+</div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
@@ -285,10 +290,10 @@ $count = 1;
                                         <?php echo $item1StorageType  ?>
                                     </td>
                                     <td>
-                                        <?php echo $item1StorageType ?>
+                                        <?php echo $item2StorageType ?>
                                     </td>
                                     <td>
-                                        <?php echo $item1StorageType ?>
+                                        <?php echo $item3StorageType ?>
                                     </td>
                                 </tr>
                                 <tr>

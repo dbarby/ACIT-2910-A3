@@ -118,7 +118,7 @@
 
 
    // public function calculateResults($Q1A, $Q2A, $Q3A, $Q4A, $Q5A, $Q6A, $Q7A, $Q8A, $Q9A, $Q10A, $Q11A) {
-        $sql = "SELECT * FROM product WHERE " . $Q1A . " AND " . $Q2A . " AND " . $Q3A . " AND " . $Q4A . " AND " . $Q5A . " AND " . $Q6A . " AND " . $Q7A . " AND " . $Q8A . " AND " . $Q9A . " AND " . $Q11A . " ORDER BY " . $Q12A;
+        $sql = "SELECT * FROM product WHERE " . $Q1A . " AND " . $Q2A . " AND " . $Q3A . " OR " . $Q4A . " AND " . $Q5A . " AND " . $Q6A . " AND " . $Q7A . " AND " . $Q8A . " AND " . $Q9A . " AND " . $Q11A . " ORDER BY " . $Q12A;
         
     //     $affectedRows = $this->db->affectRows($sql);
     //     return $affectedRows;
