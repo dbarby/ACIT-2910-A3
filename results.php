@@ -1,7 +1,8 @@
 <?php include 'header.php';
+include 'resultCalculator.php';
 
 $res = 'SELECT * FROM product'; 
-$statement = $conn->prepare($res);
+$statement = $conn->prepare($sql);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
@@ -96,7 +97,7 @@ $count = 1;
                             $item3PicURL = $row["picurl"];
                         }
      $count++;
-     if($count > 3){
+     if($count >= 3){
         $count = 1;
         break;
      }
@@ -131,7 +132,7 @@ $count = 1;
                         there is one in focus and two below it.-->
                     <div class="zoom-result-container">
                         <?php
-                    
+                    $count = 1;
                    foreach ($rows as $row){
                     echo '
                     
