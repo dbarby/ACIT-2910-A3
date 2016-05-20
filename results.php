@@ -1,7 +1,8 @@
 <?php include 'header.php';
+include 'resultCalculator.php';
 
 $res = 'SELECT * FROM product'; 
-$statement = $conn->prepare($res);
+$statement = $conn->prepare($sql);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
@@ -131,7 +132,7 @@ $count = 1;
                         there is one in focus and two below it.-->
                     <div class="zoom-result-container">
                         <?php
-                    
+                    $count = 1;
                    foreach ($rows as $row){
                     echo '
                     
@@ -419,7 +420,7 @@ $count = 1;
     <footer>
         <div class="footerholder">
             <div class="footer">
-                <a href="index5.php">
+                <a href="index14.php">
                     <button type="submit" class="btn-footer">
                         <</button>
                 </a>
