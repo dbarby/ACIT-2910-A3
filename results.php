@@ -1,11 +1,36 @@
 <?php include 'header.php';
 include 'resultCalculator.php';
 
-$res = 'SELECT * FROM product'; 
+//$res = 'SELECT * FROM product'; 
 $statement = $conn->prepare($sql);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
+    //defaults, error handling
+                            $item1Name = $item2Name = $item3Name ="N/A";
+                            $item1Brand = $item2Brand = $item3Brand =" " ;
+                            $item1RAM = $item2RAM = $item3RAM =" ";
+                            $item1StorageSize = $item2StorageSize = $item3StorageSize =" " ;
+                            $item1StorageType = $item2StorageType =$item3StorageType =" " ;
+                            $item1CPU = $item2CPU = $item1CPU = " ";
+                            $item1ProcSpeed = $item2ProcSpeed = $item3ProcSpeed =" " ;
+                            $item1ProcCores = $item2ProcCores = $item3ProcCores = " ";
+                            $item1GraphicsCard = $item2GraphicsCard = $item3GraphicsCard = " ";
+                            $item1DisplaySize = $item2DisplaySize = $item3DisplaySize =" ";
+                            $item1ScreenSize = $item2ScreenSize = $item3ScreenSize =" ";
+                            $item1ResHeight = $item2ResHeight = $item3ResHeight =" " ;
+                            $item1ResWidth = $item2ResWidth = $item3ResWidth =" ";
+                            $item1Price = $item2Price = $item3Price =" " ;
+                            $item1Weight = $item2Weight = $item3Weight = " ";
+                            $item1OS = $item2OS = $item3OS = " ";
+                            $item1BatteryLife = $item2BatteryLife = $item3BatteryLife =" " ;
+                            $item1ReleaseYear = $item2ReleaseYear = $item3ReleaseYear =" " ;
+                            $item1TouchScreen = $item2TouchScreen = $item3TouchScreen =" " ;
+                            $item1Height = $item2Height = $item3Height = " ";
+                            $item1Width = $item2Width = $item3Width =" " ;
+                            $item1Depth = $item2Depth =  $item3Depth =" " ;
+                            $item1Pic = $item2Pic = $item3Pic =" " ;
+                            $item1PicURL = $item2PicURL =$item3PicURL =" ";
 
  foreach ($rows as $row) {
                         if($count == 1){
@@ -101,6 +126,7 @@ $count = 1;
         break;
      }
  }
+            
  
 ?>
 
@@ -154,6 +180,7 @@ $count = 1;
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
                             <ul class="item-'.$count.'">
+                                <li>$'.$row["price"] . '</li>
                                 <li>' . $row["cpu"] . '</li>
                                 <li>' . $row["battery"] . ' Hours Battery</li>
                                 <li>' . $row["graphics"] . '</li>
@@ -253,6 +280,7 @@ $count = 1;
                     <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
+                            
                             <table>
                                 <tr>
                                     <td><b></b></td>
@@ -397,7 +425,7 @@ $count = 1;
             $('#WTBbtn-1').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item1Name ?>'
                     });
@@ -405,7 +433,7 @@ $count = 1;
             $('#WTBbtn-2').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item2Name ?>'
                     });
@@ -413,7 +441,7 @@ $count = 1;
             $('#WTBbtn-3').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item3Name ?>'
                     });
