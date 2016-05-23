@@ -98,21 +98,25 @@ $count = 1;
                         }
      $count++;
      if($count > 3){
-        $count = 1;
         break;
      }
  }
  
 ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a href="login.php">Admin</a>
                 <a class="navbar-brand" href="index.php">LaptopFinder2016</a>
             </div>
-
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="100"
+  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+    <span class="sr-only">100% Complete</span>
+  </div>
+</div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!-- /.navbar-collapse -->
         </div>
@@ -125,7 +129,7 @@ $count = 1;
         <div class="results-container">
             <form>
                 <div id="results-header">
-                    <label>Your Results!</label>
+                    <label>Your Best Fit Laptops</label>
                 </div>
                 <div class="row-container">
                     <!--Zoom-result just means that it is in focus. More applicable to the design where
@@ -138,11 +142,14 @@ $count = 1;
                     
                     <div class="zoom-result">
                         <div class="zoom-rank" >
-                            <p id="rank-' . $count . '">#' . $count . '</p>
+                            <p id="rank-' . $count . '">' . $count . '</p>
                         </div>
                         <div class="zoom-image" id="zoom-image-'.$count.'">
                             <img id="rank-' . $count . '-img" alt="' . $count . 'st laptop img" src="' . $row["picurl"] . '" width="110px">
-                            <a id="WTBbtn-'.$count.'" href=#>Where to buy</a>
+                            
+                        </div>
+                        <div class="whereToBuy">
+                        <a class="WTBbtn" id="WTBbtn-'.$count.'" href=#>Where to buy</a>
                         </div>
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
@@ -152,6 +159,7 @@ $count = 1;
                                 <li>' . $row["graphics"] . '</li>
                             </ul>
                         </div>
+                        
                     </div>';
                     $count++;
                     if($count > 3){
@@ -282,10 +290,10 @@ $count = 1;
                                         <?php echo $item1StorageType  ?>
                                     </td>
                                     <td>
-                                        <?php echo $item1StorageType ?>
+                                        <?php echo $item2StorageType ?>
                                     </td>
                                     <td>
-                                        <?php echo $item1StorageType ?>
+                                        <?php echo $item3StorageType ?>
                                     </td>
                                 </tr>
                                 <tr>
