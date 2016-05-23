@@ -8225,6 +8225,10 @@ button:focus {outline:0;}
     width: 100%;
     
 }
+.compare-content table{
+    width: 100%;
+    
+}
  tr:nth-child(odd){
     background-color: white;
 }
