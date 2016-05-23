@@ -164,6 +164,7 @@ $count = 1;
                         <?php
                     $count = 1;
                    foreach ($rows as $row){
+                       
                     echo '
                     
                     <div class="zoom-result">
@@ -188,6 +189,7 @@ $count = 1;
                         </div>
                         
                     </div>';
+                       
                     $count++;
                     if($count > 3){
                         break;
@@ -278,6 +280,37 @@ $count = 1;
 
                     </div>
                     <div class="compare-category-header">
+                        <button id="dimensions-size-btn">Dimensions</button>
+                        <div class="compare-content" id="dimensions-size-content">
+                            <table>
+                                <tr>
+                                    <td><b>Rank</b></td>
+                                    <td><b>Laptop</b></td>
+                                    <td><b>Height</b></td>
+                                    <td><b>Width</b></td>
+                                    <td><b>Depth</b></td>
+
+                                </tr>
+                                <?php $dim = 1;
+                                foreach ($rows as $row) {
+                                    echo "<tr>
+                                    <td><b>" . $scn . "</b></td>
+                                    <td>" . $row['p_name'] . "</td>
+                                    <td>" . $row['height']."cm</td>
+                                    <td>" . $row['width']."cm</td>
+                                    <td>" . $row['depth']."cm</td>
+                                </tr>";
+                                $dim++;
+                                if($dim>3){
+                                    break;
+                                }
+                                }?>
+                                 
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
                             
@@ -336,6 +369,30 @@ $count = 1;
                                         <?php echo $item3TouchScreen ?>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><b>Weight</b></td>
+                                    <td>
+                                        <?php echo $item1Weight ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2Weight ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3Weight ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Release Year</b></td>
+                                    <td>
+                                        <?php echo $item1ReleaseYear ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2ReleaseYear ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3ReleaseYear ?>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -376,7 +433,7 @@ $count = 1;
     <script type="text/javascript" src="./js/hideMaxListItem.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#batt-life-content, #screen-size-content,#more-content').hide();
+            $('#batt-life-content, #screen-size-content,#more-content, #dimensions-size-content').hide();
             /*$('#btn-A1').click(function() {
                 $('#description-A1').slideToggle("fast");
             });*/
@@ -389,6 +446,12 @@ $count = 1;
             $("#screen-size-btn").click(function(e) {
                 e.preventDefault();
                 $("#screen-size-content").slideToggle({
+                    duration: 400
+                });
+            });
+            $("#dimensions-size-btn").click(function(e) {
+                e.preventDefault();
+                $("#dimensions-size-content").slideToggle({
                     duration: 400
                 });
             });
