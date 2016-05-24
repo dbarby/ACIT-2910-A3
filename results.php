@@ -518,10 +518,14 @@ $count = 1;
     </body>
     <footer>
         <div class="footerholder">
-            <div class="footer">
+            <div class="footer" style="background-color:#2E9E9C;">
                 <a href="index14.php">
-                    <button type="submit" class="btn-footer">
-                        <img src="img/back.png" /></button>
+                    <button type="submit" class="btn-footer" style="width:50%;">
+                        <img src="img/back.png" style="height:18px;" /></button>
+                </a>
+                <a href="index3.php">
+                    <button type="submit" class="btn-footer" style="width:49%;">
+                        Start Again</button>
                 </a>
             </div>
         </div>
