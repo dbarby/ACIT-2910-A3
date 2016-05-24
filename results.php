@@ -1,11 +1,36 @@
 <?php include 'header.php';
 include 'resultCalculator.php';
 
-$res = 'SELECT * FROM product'; 
+//$res = 'SELECT * FROM product'; 
 $statement = $conn->prepare($sql);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
+    //defaults, error handling
+                            $item1Name = $item2Name = $item3Name ="N/A";
+                            $item1Brand = $item2Brand = $item3Brand =" " ;
+                            $item1RAM = $item2RAM = $item3RAM =" ";
+                            $item1StorageSize = $item2StorageSize = $item3StorageSize =" " ;
+                            $item1StorageType = $item2StorageType =$item3StorageType =" " ;
+                            $item1CPU = $item2CPU = $item1CPU = " ";
+                            $item1ProcSpeed = $item2ProcSpeed = $item3ProcSpeed =" " ;
+                            $item1ProcCores = $item2ProcCores = $item3ProcCores = " ";
+                            $item1GraphicsCard = $item2GraphicsCard = $item3GraphicsCard = " ";
+                            $item1DisplaySize = $item2DisplaySize = $item3DisplaySize =" ";
+                            $item1ScreenSize = $item2ScreenSize = $item3ScreenSize =" ";
+                            $item1ResHeight = $item2ResHeight = $item3ResHeight =" " ;
+                            $item1ResWidth = $item2ResWidth = $item3ResWidth =" ";
+                            $item1Price = $item2Price = $item3Price =" " ;
+                            $item1Weight = $item2Weight = $item3Weight = " ";
+                            $item1OS = $item2OS = $item3OS = " ";
+                            $item1BatteryLife = $item2BatteryLife = $item3BatteryLife =" " ;
+                            $item1ReleaseYear = $item2ReleaseYear = $item3ReleaseYear =" " ;
+                            $item1TouchScreen = $item2TouchScreen = $item3TouchScreen =" " ;
+                            $item1Height = $item2Height = $item3Height = " ";
+                            $item1Width = $item2Width = $item3Width =" " ;
+                            $item1Depth = $item2Depth =  $item3Depth =" " ;
+                            $item1Pic = $item2Pic = $item3Pic =" " ;
+                            $item1PicURL = $item2PicURL =$item3PicURL =" ";
 
  foreach ($rows as $row) {
                         if($count == 1){
@@ -101,6 +126,7 @@ $count = 1;
         break;
      }
  }
+            
  
 ?>
 
@@ -138,6 +164,7 @@ $count = 1;
                         <?php
                     $count = 1;
                    foreach ($rows as $row){
+                       
                     echo '
                     
                     <div class="zoom-result">
@@ -154,6 +181,7 @@ $count = 1;
                         <div class="zoom-description" id="zoom-description-'.$count.'">
                             <p id="brand">' . $row["p_name"] . '</p>
                             <ul class="item-'.$count.'">
+                                <li>$'.$row["price"] . '</li>
                                 <li>' . $row["cpu"] . '</li>
                                 <li>' . $row["battery"] . ' Hours Battery</li>
                                 <li>' . $row["graphics"] . '</li>
@@ -161,6 +189,7 @@ $count = 1;
                         </div>
                         
                     </div>';
+                       
                     $count++;
                     if($count > 3){
                         break;
@@ -251,8 +280,40 @@ $count = 1;
 
                     </div>
                     <div class="compare-category-header">
+                        <button id="dimensions-size-btn">Dimensions</button>
+                        <div class="compare-content" id="dimensions-size-content">
+                            <table>
+                                <tr>
+                                    <td><b>Rank</b></td>
+                                    <td><b>Laptop</b></td>
+                                    <td><b>Height</b></td>
+                                    <td><b>Width</b></td>
+                                    <td><b>Depth</b></td>
+
+                                </tr>
+                                <?php $dim = 1;
+                                foreach ($rows as $row) {
+                                    echo "<tr>
+                                    <td><b>" . $scn . "</b></td>
+                                    <td>" . $row['p_name'] . "</td>
+                                    <td>" . $row['height']."cm</td>
+                                    <td>" . $row['width']."cm</td>
+                                    <td>" . $row['depth']."cm</td>
+                                </tr>";
+                                $dim++;
+                                if($dim>3){
+                                    break;
+                                }
+                                }?>
+                                 
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="compare-category-header">
                         <button id="more-btn">More</button>
                         <div class="compare-content" id="more-content">
+                            
                             <table>
                                 <tr>
                                     <td><b></b></td>
@@ -308,6 +369,30 @@ $count = 1;
                                         <?php echo $item3TouchScreen ?>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><b>Weight</b></td>
+                                    <td>
+                                        <?php echo $item1Weight ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2Weight ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3Weight ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Release Year</b></td>
+                                    <td>
+                                        <?php echo $item1ReleaseYear ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item2ReleaseYear ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item3ReleaseYear ?>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -348,7 +433,7 @@ $count = 1;
     <script type="text/javascript" src="./js/hideMaxListItem.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#batt-life-content, #screen-size-content,#more-content').hide();
+            $('#batt-life-content, #screen-size-content,#more-content, #dimensions-size-content').hide();
             /*$('#btn-A1').click(function() {
                 $('#description-A1').slideToggle("fast");
             });*/
@@ -361,6 +446,12 @@ $count = 1;
             $("#screen-size-btn").click(function(e) {
                 e.preventDefault();
                 $("#screen-size-content").slideToggle({
+                    duration: 400
+                });
+            });
+            $("#dimensions-size-btn").click(function(e) {
+                e.preventDefault();
+                $("#dimensions-size-content").slideToggle({
                     duration: 400
                 });
             });
@@ -397,7 +488,7 @@ $count = 1;
             $('#WTBbtn-1').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item1Name ?>'
                     });
@@ -405,7 +496,7 @@ $count = 1;
             $('#WTBbtn-2').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item2Name ?>'
                     });
@@ -413,7 +504,7 @@ $count = 1;
             $('#WTBbtn-3').click(function() {
                 Lobibox.alert("info", //AVAILABLE TYPES: "error", "info", "success", "warning"
                     {
-                        msg: "<ul><li><a href=#>Best Buy</a></li><br><li><a href=#>NCIX</a></li></ul>",
+                        msg: "<ul><li><a href=http://www.bestbuy.ca/en-CA/home.aspx>Best Buy</a></li><br><li><a href=http://www.ncix.com/>NCIX</a></li></ul>",
                         width: 350,
                         title: 'Where to buy the <?php echo $item3Name ?>'
                     });
