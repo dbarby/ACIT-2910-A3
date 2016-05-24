@@ -36,7 +36,7 @@ $count = 1;
 
         <div class="survey-container">
                 <div class="label1">
-                    <label><?php echo $row->question;?></label>
+                    <label><?php echo $row->question;?>&nbsp; &nbsp; &nbsp;<img src='img/monitor-size.png'/></label>
                 </div>
                 <div class="row-container">
                     <?php 
