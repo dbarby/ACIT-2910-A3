@@ -1,2 +1,0 @@
-Daniel Baranowski A00903402
-Patrick Neal
