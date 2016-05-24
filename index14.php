@@ -39,7 +39,7 @@ $count = 1;
 
         <div class="survey-container">
                 <div class="label1">
-                    <label><?php echo $row->question;?></label>
+                    <label><?php echo $row->question;?><br/>&nbsp;<img src='img/battery.png'/>&nbsp;<img src='img/page-speed-interface-symbol.png'/>&nbsp;<img src='img/money-bag.png'/></label>
                 </div>
                 <div class="row-container">
                     <?php 
